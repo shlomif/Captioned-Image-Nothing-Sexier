@@ -1,4 +1,4 @@
-SVG = Nothing-Sexier.svg
+SVG = friends--yeah-like-i-could-lose-it.svg
 PNG = $(SVG).png
 JPEG = $(SVG).jpg
 WEBP = $(SVG).webp
@@ -17,4 +17,4 @@ $(JPEG): $(PNG)
 	gm convert $< $@
 
 upload: all
-	rsync --progress -v -a --inplace $(PNG) $(SVG) *.jpg $(__HOMEPAGE_REMOTE_PATH)/nothing-sexier/
+	rsync --progress -v -a --inplace $(PNG) $(SVG) $(WEBP) *.jpg $(__HOMEPAGE_REMOTE_PATH)/friends--yeah-like-i-could-lose-it/
