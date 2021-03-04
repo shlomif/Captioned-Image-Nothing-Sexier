@@ -3,12 +3,12 @@ PNG = $(SVG).png
 JPEG = $(SVG).jpg
 WEBP = $(SVG).webp
 
-WIDTH = 600
+WIDTH = 800
 
 all: $(PNG) $(JPEG) $(WEBP)
 
 $(PNG): $(SVG)
-	inkscape --export-png=$@ --export-width=$(WIDTH) $<
+	inkscape --export-type=png --export-filename=$@ --export-width=$(WIDTH) $<
 
 $(WEBP): $(PNG)
 	gm convert $< $@
