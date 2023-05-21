@@ -8,7 +8,7 @@ WIDTH = 600
 all: $(PNG) $(JPEG) $(WEBP)
 
 $(PNG): $(SVG)
-	inkscape --export-png=$@ --export-width=$(WIDTH) $<
+	inkscape --export-filename=$@ --export-type=png --export-width=$(WIDTH) $<
 
 $(WEBP): $(PNG)
 	gm convert $< $@
